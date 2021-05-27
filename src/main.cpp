@@ -1,4 +1,5 @@
 #include <Arduino.h>
+#include "SevenSegment.h"
 
 void setup() {
   pinMode(3,  OUTPUT);
