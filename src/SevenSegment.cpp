@@ -55,3 +55,11 @@ void SevenSegment::set(SegmentPinWrite number)
     digitalWrite(pins.bottomLeftPin, number.bottomLeftPin);
     digitalWrite(pins.bottomPin, number.bottomPin);
 }
+
+void SevenSegment::activate() {
+    digitalWrite(pins.powerPin, true);
+}
+
+void SevenSegment::deactivate() {
+    digitalWrite(pins.powerPin, false);
+}

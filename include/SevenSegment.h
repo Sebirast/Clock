@@ -63,6 +63,9 @@ public:
 	void set(int number);
 	void set(int number, bool point);
 	void set(bool point);
+
+	void activate();
+	void deactivate();
 };
 } // namespace display
 
