@@ -57,6 +57,7 @@ private:
 public:
 	SevenSegment(const int pointPin, const int topPin, const int topRightPin, const int topLeftPin, const int middlePin, const int bottomRightPin, const int bottomLeftPin, const int bottomPin, const int powerPin);
 	SevenSegment(SegmentPins segmentPins);
+	SevenSegment() = default;
 
 	void clearDisplay();
 

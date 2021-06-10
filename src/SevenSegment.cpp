@@ -46,20 +46,24 @@ void SevenSegment::set(int number)
 
 void SevenSegment::set(SegmentPinWrite number)
 {
-    digitalWrite(pins.dotPin, number.dotPin);
-    digitalWrite(pins.topPin, number.topPin);
-    digitalWrite(pins.topRightPin, number.topRightPin);
-    digitalWrite(pins.topLeftPin, number.topLeftPin);
-    digitalWrite(pins.middlePin, number.middlePin);
-    digitalWrite(pins.bottomRightPin, number.bottomRightPin);
-    digitalWrite(pins.bottomLeftPin, number.bottomLeftPin);
-    digitalWrite(pins.bottomPin, number.bottomPin);
+    digitalWrite(pins.dotPin, !number.dotPin);
+    digitalWrite(pins.topPin, !number.topPin);
+    digitalWrite(pins.topRightPin, !number.topRightPin);
+    digitalWrite(pins.topLeftPin, !number.topLeftPin);
+    digitalWrite(pins.middlePin, !number.middlePin);
+    digitalWrite(pins.bottomRightPin, !number.bottomRightPin);
+    digitalWrite(pins.bottomLeftPin, !number.bottomLeftPin);
+    digitalWrite(pins.bottomPin, !number.bottomPin);
 }
 
 void SevenSegment::activate() {
-    digitalWrite(pins.powerPin, true);
+    analogWrite(pins.powerPin, 255);
 }
 
 void SevenSegment::deactivate() {
     digitalWrite(pins.powerPin, false);
+}
+
+void SevenSegment::clearDisplay() {
+    pins.forEach([](int pin) {digitalWrite(pin, true);});
 }
